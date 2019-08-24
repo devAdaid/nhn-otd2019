@@ -22,27 +22,16 @@ int main() {
 
 	sort(circles.begin(), circles.end(), greater<CircleSection>());
 
-	cout << endl << endl;
-	cout << "정렬" << endl;
-	for (auto circle : circles) {
-		circle.print();
-		cout << endl;
-	}
-
-	cout << endl << endl;
-	cout << "포함 테스트" << endl;
-	circles[0].isIncluding(&circles[1]);
-
-	cout << endl << endl;
-	cout << "트리" << endl;
-
 	SectionTree sectionTree;
 
 	for (auto iter = circles.begin(); iter != circles.end(); iter++) {
-		sectionTree.AddSection(&(*iter));
+		sectionTree.addSection(&(*iter));
 	}
 
-	sectionTree.print();
+	int from, to;
+	cin >> from >> to;
+
+	sectionTree.printPath(from, to);
 
 	return 0;
 }

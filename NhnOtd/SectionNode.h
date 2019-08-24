@@ -8,8 +8,9 @@ class SectionNode
 {
 public:
 	int depth = 0;
+	SectionNode* parentNodePtr;
 	CircleSection* sectionPtr;
-	vector<SectionNode> childs;
+	vector<SectionNode*> childs;
 
 	SectionNode();
 	SectionNode(CircleSection* sptr);
@@ -17,6 +18,6 @@ public:
 
 	void print();
 	SectionNode* getChildIncluding(CircleSection* s);
-	void addChildWith(CircleSection* s);
+	SectionNode* addChildWith(CircleSection* s);
 };
 

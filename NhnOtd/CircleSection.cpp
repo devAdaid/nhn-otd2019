@@ -35,8 +35,5 @@ bool CircleSection::isIncluding(CircleSection* circle) {
 	int dSquare = xDiff * xDiff + yDiff * yDiff;
 	int rDiffSquare = (radius - circle->radius) * (radius - circle->radius);
 
-	cout << dSquare << " " << rDiffSquare << endl;
-	cout << (dSquare < rDiffSquare) << endl;
-
 	return (dSquare < rDiffSquare);
 }
